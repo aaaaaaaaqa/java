@@ -1,24 +1,43 @@
+<!DOCTYPE html>
 <html>
-<head>
-<title> Paweł Okrój 3F_2 </title>
-<script language="JavaScript">
-function WinOpen_Okroj()
-{
-window.open("obraz.html","okienko","toolbar=no,directories=no,menubar=no,height=280,width=160,top=200,left=200");
-}
-function WinOpen_Okroj_2()
-{
-window.open("zadanie2.html","okienko","toolbar=no,directories=no,menubar=no,height=300,width=500,top=50,left=300");
-}
-</script>
-</head>
-<body>
-<p style="text-align: right"> 
-<span style="font-size: 80">Okrój</span> </p>
-<form>
-<input type="button" name="przycisk" value="Zadanie 1" onclick="WinOpen_Okroj(' ')">
-<input type="button" name="przycisk2" value="Zadanie 2" onclick="WinOpen_Okroj_2(' ')">
 
-</form>
+<head>
+<title>Paweł Okrój - Zadania JavaScript</title>
+<meta charset="utf-8">
+<meta  name="author" content="Paweł Okrój">
+<style>
+    p
+    {
+        font-size: 2cm;
+        display:block;
+        margin-bottom:0;
+        margin-top:0;
+        padding:0;
+    }
+</style>
+<script language="JavaScript">
+    function WinOpen(x)
+    {
+    window.open(x,"okienko","toolbar=no,directories=no,menubar=no,height=280,width=160,top=500,left=500");
+    }
+    function kod(x)
+    {
+    window.open(x,"okienko","toolbar=no,directories=no,menubar=no,height=400,width=300,top=200,left=200");
+    }
+    </script>
+</head>
+
+
+<body>
+    <p align="right">Okrój</p>
+    <form>
+        <input type="button" value="Zadanie1 Działanie" onclick="WinOpen('zadanie1.html')">
+        <input type="button" value="Zadanie1 Kod" onclick="kod('zadanie1-kod.html')"><br>
+		<input type="button" value="Zadanie2" onclick="WinOpen('zadanie2.html')">
+		<input type="button" value="Zadanie2 Kod" onclick="kod('zadanie2-kod.html')">
+    </form>
 </body>
+
+<!-- Paweł Okrój 3F_2-->
+
 </html>
