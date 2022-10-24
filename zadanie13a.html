@@ -1,0 +1,20 @@
+<html>
+ <body>
+  <div style="color:black;font-size:69px;">
+   <script language="JavaScript">
+   var liczba1=prompt("B=","");
+   var liczba2=prompt("C=","");
+   var b_okr=parseFloat(liczba1);
+   var c_okr=parseFloat(liczba2);
+   var a_okr=Math.sqrt(Math.pow(c_okr,2)-Math.pow(b_okr,2));
+sin_alfa=b_okr/c_okr;
+alfa=Math.asin(b_okr/c_okr)*180/Math.PI;
+document.write("b="+b_okr+" cm"+"<br>");
+document.write("c="+c_okr+" cm"+"<br>");
+document.write("a="+a_okr.toFixed(3)+" cm"+"<br>");
+document.write("sinalfa="+sin_alfa.toFixed(3)+"<br>");
+document.write("alfa="+alfa.toFixed(3)+" st"+"<br>");
+   </script>
+  </div>
+ </body>
+</html> 
