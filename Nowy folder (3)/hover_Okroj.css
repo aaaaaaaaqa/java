@@ -1,0 +1,26 @@
+div#blok1_okro {
+background-color:yellow;
+width:630px;
+font-size: 12mm;}
+div#blok2_okro {
+background-color:yellow;
+width:630px;
+font-size: 12mm;}
+div#blok3_okro {
+background-color:yellow;
+width:630px;
+font-size: 12mm;}
+div#blok1_okro:hover{
+background-color:silver;
+font-size: 24mm;}
+div#blok2_okro:hover{
+background-color:fuchsia;
+font-size: 24mm;}
+div#blok3_okro:hover{
+background-color:aqua;
+font-size: 24mm;}
+
+
+
+
+

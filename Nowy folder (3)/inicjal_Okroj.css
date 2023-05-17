@@ -1,0 +1,10 @@
+p
+{
+kolor liter:purple;
+wielkość liter:30pt;
+}
+p:pierwsza_litera
+{
+kolor liter:green;
+wielkość liter:100pt;
+}

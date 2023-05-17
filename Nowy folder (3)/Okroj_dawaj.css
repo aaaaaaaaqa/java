@@ -1,0 +1,38 @@
+A.duzy
+{
+Wielkość liter :24pt;
+brak dekoracji }
+A.duzy:kolor linku
+{
+color:navy;
+}
+A.duzy:kolor linku odwiedzonego
+{
+color:green;
+}
+A.duzy:kolor linku wybranego
+{
+color:blue;
+linia pod tekstem (podkreślenie)
+}
+A.maly
+{
+Wielkość liter: 18pt;
+}
+A.maly:kolor linku
+{
+color:silver;;
+}
+A.maly:odwiedzony
+{
+color:red;
+}
+A.maly: kolor linku wybranego
+{
+color:blue;
+text-decoration:none;
+}
+A:active
+{
+color:silver;
+}
