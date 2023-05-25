@@ -1,0 +1,85 @@
+<html>
+<head>
+<script type="text/javascript">
+function obliczanie(dane)
+{
+wynik.innerHTML=" ";
+cena_koncowa=0;
+if ( dane.wybor[0].checked)
+93
+{
+cena_koncowa=parseFloat(dane.cena.value);
+}
+if ( dane.wybor[1].checked)
+{
+cena_koncowa=0.9*parseFloat(dane.cena.value);
+}
+if ( dane.wybor[2].checked)
+{
+cena_koncowa=0.8*parseFloat(dane.cena.value);
+}
+if (dane.vat.selectedIndex==0)
+{
+cena_koncowa=cena_koncowa;
+}
+if (dane.vat.selectedIndex==1)
+{
+cena_koncowa=1.07*cena_koncowa;
+}
+if (dane.vat.selectedIndex==2)
+{
+cena_koncowa=1.23*cena_koncowa;
+}
+if(dane.ubezpieczenie.checked == true)
+{
+cena_koncowa=1.15*cena_koncowa;
+}
+if(dane.gwarancja.checked == true)
+{
+cena_koncowa=1.28*cena_koncowa;
+}
+wynik.innerHTML="do zapłaty "+cena_koncowa.toFixed(2)+" zł";
+}
+</script>
+</head>
+<body>
+<form name="formularz">
+<h1><b>Lodziarnia</b><br></h1>
+<b>Smaki lodów:</b><br>
+Czekoladowe <input type="radio" name="wybor" value=0 /><br>
+Waniliowe <input type="radio" name="wybor" value=10 /><br>
+Truskawkowe <input type="radio" name="wybor" value=20 /><br><br>
+<b>Ilość gałek:</b><br><select name="vat"/>
+<option value="1"> 1
+<option value="2"> 2
+<option value="3"> 3
+<option value="3"> 4
+<option value="3"> 5
+</select><br><br>
+<b>Dodatki do lodów:</b><br>
+		<input type="checkbox" name="dodatki" value="posypka" />Posypka<br />
+		<input type="checkbox" name="dodatki" value="polewa" />Polewa<br />
+		<input type="checkbox" name="dodatki" value="owoce" />Świeże owoce<br /><br />
+<b>Napoje:</b><br>
+<input type="checkbox" name="napoje" value="kawa" />Kawa<br />
+		<input type="checkbox" name="napoje" value="herbata" />Herbata<br />
+		<input type="checkbox" name="napoje" value="gazowany" />Napój gazowany<br /><br />
+		<b>Podatek vat:</b><br><select name="vat"/>
+<option value="0"> 0
+<option value="8"> 8
+<option value="23"> 23
+</select><br><br>
+<b>Rabat:</b><br><select name="vat"/>\
+		<option value="0"> 0%
+<option value="10"> 10%
+<option value="25"> 25%
+<option value="50"> 50%
+<option value="99"> 99%
+</select><br><br>
+</form>
+<input type="button" value="Złóż zamówienie" onClick="obliczanie(this.form)"/><br><br>
+<table>
+<tr id="wynik"></tr>
+</table>
+</body>
+</html>
