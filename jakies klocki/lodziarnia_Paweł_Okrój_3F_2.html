@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lodziarnia Paweł Okrój 3F</title>
+</head>
+<body>
+  <h1>Lodziarnia</h1>
+
+  <h2>Wybierz ilość gałek:</h2>
+  <input type="number" id="iloscGalek" min="1" max="5">
+
+  <h2>Wybierz smak lodów:</h2>
+  <select id="smakLodu">
+    <option value="waniliowe">Waniliowe 4zł</option>
+    <option value="czekoladowe">Czekoladowe 5zł</option>
+    <option value="truskawkowe">Truskawkowe 5zł</option>
+  </select>
+
+  <h2>Wybierz dodatki do lodów:</h2>
+  <input type="checkbox" id="dodatek1" value="posypka_czekoladowa">
+  <label for="dodatek1">Posypka czekoladowa 2zł</label><br>
+  <input type="checkbox" id="dodatek2" value="posypka_owocowa">
+  <label for="dodatek2">Posypka owocowa 5zł</label><br>
+  <input type="checkbox" id="dodatek3" value="bite_czekolady">
+  <label for="dodatek3">Bite czekolady 3zł</label><br>
+
+  <h2>Wybierz napój:</h2>
+  <select id="napoj">
+    <option value="brak">Brak</option>
+    <option value="woda">Woda 4zł</option>
+    <option value="cola">Cola 6zł</option>
+    <option value="sok_pomaranczowy">Sok pomarańczowy 5zł</option>
+  </select>
+
+  <h2>Podatek VAT:</h2>
+  <input type="radio" id="podatek8" name="podatek" value="0.08">
+  <label for="podatek8">8%</label>
+  <input type="radio" id="podatek23" name="podatek" value="0.23" checked>
+  <label for="podatek23">23%</label>
+
+  <h2>Rabat:</h2>
+  <input type="number" id="rabat" min="0" max="100" value="0">
+
+  <button onclick="obliczCene()">Oblicz cenę</button>
+
+  <h2>Łączna cena:</h2>
+  <p id="cena"></p>
+
+  <script>
+    function obliczCene() {
+      var iloscGalekInput = document.getElementById("iloscGalek");
+      var smakLoduInput = document.getElementById("smakLodu");
+      var dodatek1Input = document.getElementById("dodatek1");
+      var dodatek2Input = document.getElementById("dodatek2");
+      var dodatek3Input = document.getElementById("dodatek3");
+      var napojInput = document.getElementById("napoj");
+      var podatekInput = document.querySelector('input[name="podatek"]:checked');
+      var rabatInput = document.getElementById("rabat");
+      var cenaOutput = document.getElementById("cena");
+
+      var iloscGalek = iloscGalekInput.value;
+      var smakLodu = smakLoduInput.value;
+      var dodatek1 = dodatek1Input.checked;
+      var dodatek2 = dodatek2Input.checked;
+      var dodatek3 = dodatek3Input.checked;
+      var napoj = napojInput.value;
+      var podatek = parseFloat(podatekInput.value);
+      var rabat = parseFloat(rabatInput.value);
+
+      var cenaLoda = 0;
+      if (smakLodu === "waniliowe") {
+        cenaLoda = 4.00;
+      } else if (smakLodu === "czekoladowe") {
+        cenaLoda = 5.00;
+      } else if (smakLodu === "truskawkowe") {
+        cenaLoda = 5.00;
+      }
+
+      var cenaDodatkow = 0;
+      if (dodatek1) {
+        cenaDodatkow += 2.00;
+      }
+      if (dodatek2) {
+        cenaDodatkow += 5.00;
+      }
+      if (dodatek3) {
+        cenaDodatkow += 3.00;
+      }
+
+      var cenaNapoju = 0;
+      if (napoj === "woda") {
+        cenaNapoju = 4.00;
+      } else if (napoj === "cola") {
+        cenaNapoju = 6.00;
+      } else if (napoj === "sok_pomaranczowy") {
+        cenaNapoju = 5.00;
+      }
+
+      var cena = (cenaLoda * iloscGalek) + cenaDodatkow + cenaNapoju;
+      cena *= (1 + podatek);
+      cena -= (cena * (rabat / 100));
+
+      cenaOutput.innerHTML = cena.toFixed(2) + " zł";
+    }
+  </script>
+</body>
+</html>
