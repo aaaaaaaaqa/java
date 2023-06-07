@@ -4,6 +4,15 @@
   <title>Lodziarnia Paweł Okrój 3F</title>
 </head>
 <body>
+<font color="lightgreen">
+<style>
+body {
+  background-image: url('lodziarnia.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
   <h1>Lodziarnia</h1>
 
   <h2>Wybierz ilość gałek:</h2>
@@ -39,13 +48,26 @@
   <label for="podatek23">23%</label>
 
   <h2>Rabat:</h2>
-  <input type="number" id="rabat" min="0" max="100" value="0">
+  <input type="number" id="rabat" min="0" max="100" value="0"><br><br><br>
+
+            <b>Dane do faktury:</b><br>
+            <p>Imię i nazwisko: </p>
+            <input type="text" name="name">
+			
+            <p> Adres email:</p>
+            <input type="text" name="email">
+			
+            <p>Numer telefonu:</p>
+            <input type="text" name="pesel">
+			
+            <p>NIP:</p>
+            <input type="text" name="nip"><br><br>
 
   <button onclick="obliczCene()">Oblicz cenę</button>
 
   <h2>Łączna cena:</h2>
   <p id="cena"></p>
-
+</font>
   <script>
     function obliczCene() {
       var iloscGalekInput = document.getElementById("iloscGalek");
@@ -105,3 +127,4 @@
   </script>
 </body>
 </html>
+<!--Paweł Okrój 3F_2-->
